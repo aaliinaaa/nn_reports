@@ -1,0 +1,8 @@
+{
+  "accuracy": 0.4854,
+  "checkpoint": "last.pt",
+  "loss": 1.46057848777771,
+  "role": "test",
+  "run_id": "24008b2e91ed_20261121121826_7d620e_06737",
+  "split_fingerprint": "d1d8b32e98ff65d8b36ba659cbca46eaaf8a2c69d1b0ec6771a2f460d66f436d"
+}

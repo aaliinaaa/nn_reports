@@ -1,0 +1,20 @@
+{
+  "best_val_acc": 0.4748,
+  "exp_id": "24008b2e91edff20e08a890f8063cb391ca30955c2565b9215b503941cf1e1cb",
+  "final_epoch": 5,
+  "first_batch_checksum": "60a1d4ca39b15db0ba56fcd16d0af44cec0d8df0616e5c9dadf86edbcc48c1b2",
+  "global_step": 395,
+  "param_count": 558538,
+  "resumed_from": "runs\\fc17c07093d3_20261121193923_9442df_63225\\checkpoints\\last.pt",
+  "resumed_start_epoch": 2,
+  "run_id": "24008b2e91ed_20261121195929_074c2d_69277",
+  "split_sizes": {
+    "cal": 2000,
+    "test": 10000,
+    "train": 10000,
+    "val": 5000
+  },
+  "test_acc": 0.4741,
+  "test_loss": 1.483025616645813,
+  "total_train_time_s": 1577.8374626636505
+}

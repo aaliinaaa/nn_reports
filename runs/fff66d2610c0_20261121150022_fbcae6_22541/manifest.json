@@ -1,0 +1,47 @@
+{
+  "config_hash": "656ee08218ebffe96665f23c084096715a4e586b6deeca055170f99c5c72600f",
+  "data": {
+    "data_fingerprint": "58e9d3c1c180dd2c1631b1426d327711d5455e0c6ce6345793c3b15724a8a96f",
+    "roles": {
+      "cal": 2000,
+      "test": 10000,
+      "train": 10000,
+      "val": 5000
+    },
+    "split_fingerprint": "e031f3d05f9e0a920f297b4084f3c2b20470ffe96ffb3668c614cfa5722f923a"
+  },
+  "dependency_lock_hash": "db03f1bc5c72f3b772166017760cffbd7d34dbab07715f9b64b8db7569a0caae",
+  "determinism_mode": {
+    "amp": false,
+    "deterministic": true,
+    "mode": "A",
+    "num_workers": 0
+  },
+  "environment": {
+    "cuda_available": false,
+    "cuda_version": null,
+    "cudnn_version": null,
+    "device_count": 0,
+    "device_name": "Intel64 Family 6 Model 122 Stepping 8, GenuineIntel",
+    "device_type": "cpu",
+    "python_version": "3.10.3",
+    "torch_version": "2.14.1+cpu"
+  },
+  "exp_id": "fff66d2610c0fbbbc0af102d7583e4b260c1e0a5fdf2b5480968048887da3454",
+  "git": {
+    "branch": "HEAD",
+    "commit": "HEAD",
+    "dirty": true
+  },
+  "host": "DESKTOP-57PKEHA",
+  "param_count": 558538,
+  "platform": "Windows-10-10.0.19043-SP0",
+  "profile": {
+    "id": "P1ea240",
+    "student_id_hash": "1ea240e70c610edcceaf8d78232839718b0a759f5b56f2e6a51ad620510edd84"
+  },
+  "resolved_config_path": "runs\\fff66d2610c0_20261121150022_fbcae6_22541\\config.resolved.yaml",
+  "run_id": "fff66d2610c0_20261121150022_fbcae6_22541",
+  "seed": 513949927,
+  "started_at": "2026-11-21T15:00:24.480748+00:00"
+}

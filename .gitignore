@@ -1,0 +1,19 @@
+# Versioned provenance (small text artifacts) -- section 16.1
+# NOT versioned: checkpoints, plots, downloaded data, caches.
+
+data/
+!data/splits/*.json
+runs/*/checkpoints/
+runs/*/plots/
+__pycache__/
+*.pyc
+*.pt
+*.pth
+venv/
+.venv/
+.pytest_cache/
+
+# Local profile output is per-student; keep the generator, not the artifact
+# unless you want to commit your own profile.
+configs/profiles/*.yaml
+

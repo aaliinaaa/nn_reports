@@ -1,0 +1,20 @@
+{
+  "best_val_acc": 0.489,
+  "exp_id": "fff66d2610c0fbbbc0af102d7583e4b260c1e0a5fdf2b5480968048887da3454",
+  "final_epoch": 5,
+  "first_batch_checksum": "7b9b6a92ac78b2ca80a08b598416356d3edc78550f72a89d1e4a5edf0476a90f",
+  "global_step": 395,
+  "param_count": 558538,
+  "resumed_from": null,
+  "resumed_start_epoch": 0,
+  "run_id": "fff66d2610c0_20261121150022_fbcae6_22541",
+  "split_sizes": {
+    "cal": 2000,
+    "test": 10000,
+    "train": 10000,
+    "val": 5000
+  },
+  "test_acc": 0.488,
+  "test_loss": 1.4431183687210083,
+  "total_train_time_s": 2634.3958909511566
+}

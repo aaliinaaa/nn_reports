@@ -1,0 +1,54 @@
+# Base configuration for Lab 0 (mode A baseline).
+# Per-student fields (width, depth, batch_size, optimizer, scheduler,
+# train_fraction, base_seed) are overridden by configs/profiles/<ID>.yaml
+# generated via `python -m src.profile_gen --student-id <ID>`.
+#
+# Mode A defaults are mandatory for the basic program: deterministic=true,
+# amp=false, num_workers=0 (section 9.2).
+
+experiment:
+  name: lab0_cifar10
+  seed: 1729          # replaced by profile.base_seed when --profile is used
+  deterministic: true
+
+data:
+  name: cifar10
+  root: ./data
+  train_fraction: 0.25
+  num_workers: 0      # mode A: 0; counterfactual #2 bumps this to 2
+  # split_seed defaults to experiment.seed if omitted.
+
+model:
+  name: small_cnn
+  width: 64
+  depth: 4
+  num_classes: 10
+
+optimizer:
+  name: adamw
+  lr: 0.001
+  weight_decay: 0.0001
+  momentum: 0.9       # used only when name=sgd
+
+scheduler:
+  name: cosine
+  warmup_epochs: 1
+  step_size: 1        # used only when name=step
+  gamma: 0.5          # used only when name=step
+
+train:
+  epochs: 5          # drop to 5 if T_epoch > 60 s on your hardware
+  batch_size: 128
+  amp: false
+
+logging:
+  backend: local      # JSONL always written locally (section 18)
+  save_every: 1
+
+losses:
+  name: cross_entropy
+
+device:
+  type: auto          # auto | cpu | cuda (test #11)
+
+# profile: {}        # injected from configs/profiles/<ID>.yaml at resolve time

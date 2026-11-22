@@ -1,0 +1,44 @@
+data:
+  name: cifar10
+  num_workers: 0
+  root: ./data
+  train_fraction: 0.2
+device:
+  type: auto
+experiment:
+  deterministic: true
+  name: lab0_cifar10
+  seed: 513949929
+logging:
+  backend: local
+  save_every: 1
+losses:
+  name: cross_entropy
+model:
+  depth: 5
+  name: small_cnn
+  num_classes: 10
+  width: 64
+optimizer:
+  lr: 0.001
+  momentum: 0.9
+  name: adamw
+  weight_decay: 0.0001
+profile:
+  base_seed: 513949927
+  id: P1ea240
+  profile_batch_sizes:
+  - 1
+  - 8
+  - 32
+  - 64
+  student_id_hash: 1ea240e70c610edcceaf8d78232839718b0a759f5b56f2e6a51ad620510edd84
+scheduler:
+  gamma: 0.5
+  name: step
+  step_size: 1
+  warmup_epochs: 1
+train:
+  amp: false
+  batch_size: 128
+  epochs: 5
