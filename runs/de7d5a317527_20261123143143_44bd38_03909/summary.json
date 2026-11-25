@@ -1,0 +1,63 @@
+{
+  "run_id": "de7d5a317527_20261123143143_44bd38_03909",
+  "exp_id": "de7d5a31752740fe2a5224bdb1086de11c97dc61220a0a079d7020d81f99d3d9",
+  "finished_at_utc": "2026-11-23T14:38:48.412010+00:00",
+  "total_train_time_s": 420.7000916004181,
+  "best_val_acc": 0.1,
+  "final_train_acc": 0.1,
+  "test_acc": 0.1,
+  "trainability": {
+    "rho_T": NaN,
+    "GI": NaN,
+    "AVD": NaN,
+    "max_zero_fraction": 0.0,
+    "max_saturated_fraction": 0.0,
+    "numerical_failure": true
+  },
+  "layer_profiles": {
+    "q_fwd": [
+      NaN,
+      NaN,
+      NaN,
+      NaN,
+      NaN,
+      NaN,
+      NaN,
+      NaN,
+      NaN
+    ],
+    "delta_bwd": [
+      NaN,
+      NaN,
+      NaN,
+      NaN,
+      NaN,
+      NaN,
+      NaN,
+      NaN,
+      NaN
+    ],
+    "g_l": [
+      NaN,
+      NaN,
+      NaN,
+      NaN,
+      NaN,
+      NaN,
+      NaN,
+      NaN,
+      NaN,
+      NaN,
+      NaN,
+      NaN,
+      NaN,
+      NaN,
+      NaN,
+      NaN,
+      NaN
+    ],
+    "q0": 0.9960259952381132,
+    "qL": NaN,
+    "c_first_block": NaN
+  }
+}

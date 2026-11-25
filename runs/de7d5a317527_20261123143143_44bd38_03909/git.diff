@@ -1,0 +1,43 @@
+diff --git a/src/profile_gen.py b/src/profile_gen.py
+index e47e2ea..66be9f5 100644
+--- a/src/profile_gen.py
++++ b/src/profile_gen.py
+@@ -1,14 +1,4 @@
+-"""Per-student profile generator (section 11).
+-
+-The profile is NOT chosen freely: it is computed from the student record-book
+-number via SHA-256, so it is reproducible, verifiable, and identical on every
+-computation. Only the fields listed in section 11.1 are derived here; the
+-profile never touches dataset, baseline architecture, mandatory experiments,
+-acceptance thresholds, or modes A/B/C.
+-
+-Two different students must produce two different profiles; the same student
+-must always produce the same profile (test #9).
+-"""
++"""Per-student profile generator (section 11 of Lab 0 + section 7 of Lab 1)."""
+ from __future__ import annotations
+ 
+ import argparse
+@@ -35,6 +25,11 @@ def _h(student_id: str) -> str:
+     return hashlib.sha256(student_id.encode("utf-8")).hexdigest()
+ 
+ 
++def lab_pick(student_id: str, lab: int, a: int, b: int, options: list):
++    hk = hashlib.sha256(f"{student_id}:lab{lab}".encode("utf-8")).hexdigest()
++    return options[int(hk[a:b], 16) % len(options)]
++
++
+ def compute_profile(student_id: str) -> dict:
+     """Return the resolved profile as a plain dict matching the spec format."""
+     h = _h(student_id)
+@@ -47,6 +42,10 @@ def compute_profile(student_id: str) -> dict:
+         "student_id_hash": h,
+         "base_seed": int(h[0:8], 16) % (2 ** 31),
+         "profile_batch_sizes": PROFILE_BATCH_SETS[idx(20, 22, 3)],
++        # Lab 1 fields (section 7)
++        "lab1_depths": lab_pick(student_id, 1, 0, 2, [[4, 16, 32, 64], [8, 24, 48, 96]]),
++        "lab1_bad_sigma": lab_pick(student_id, 1, 2, 4, [0.02, 0.05, 0.10]),
++        "lab1_optimizer": lab_pick(student_id, 1, 4, 6, ["sgd_momentum", "adamw"]),
+     }
+     return {
+         "profile": profile,

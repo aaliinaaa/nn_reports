@@ -1,0 +1,58 @@
+data:
+  name: fashion_mnist
+  num_workers: 0
+  root: ./data
+  train_fraction: 0.2
+device:
+  type: auto
+experiment:
+  deterministic: true
+  name: lab1_e2_resnet_inv_sqrt_d8
+  seed: 513949927
+lab1_model:
+  activation: relu
+  arch: resnet_inv_sqrt
+  depth: 8
+  init_scheme: he
+  norm: none
+  width: 256
+logging:
+  backend: local
+  save_every: 1
+losses:
+  name: cross_entropy
+model:
+  depth: 8
+  name: resnet_inv_sqrt
+  num_classes: 10
+  width: 256
+optimizer:
+  lr: 0.01
+  momentum: 0.9
+  name: sgd_momentum
+  weight_decay: 0.0001
+profile:
+  base_seed: 513949927
+  id: P1ea240
+  lab1_bad_sigma: 0.02
+  lab1_depths:
+  - 8
+  - 24
+  - 48
+  - 96
+  lab1_optimizer: sgd_momentum
+  profile_batch_sizes:
+  - 1
+  - 8
+  - 32
+  - 64
+  student_id_hash: 1ea240e70c610edcceaf8d78232839718b0a759f5b56f2e6a51ad620510edd84
+scheduler:
+  gamma: 0.5
+  name: step
+  step_size: 1
+  warmup_epochs: 1
+train:
+  amp: false
+  batch_size: 128
+  epochs: 3
